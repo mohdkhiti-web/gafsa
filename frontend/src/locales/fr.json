@@ -1,0 +1,387 @@
+{
+  "navbar": {
+    "home": "Accueil",
+    "products": "Produits",
+    "services": "Services",
+    "farms": "Fermes",
+    "cart": "Panier",
+    "contact": "Contact",
+    "login": "Connexion",
+    "logout": "Déconnexion",
+    "language": "Langue"
+  },
+  "home": {
+    "hero": {
+      "badge": "Leader de l'Agriculture Intelligente en Tunisie",
+      "title": "Transformez Votre Ferme avec la Technologie Intelligente",
+      "subtitle": "Rejoignez la révolution agricole en Tunisie. Nos solutions d'agriculture intelligente aident les agriculteurs à augmenter les rendements, économiser l'eau et construire des avenirs durables.",
+      "exploreProducts": "Explorer les Produits",
+      "watchDemo": "Voir la Démo",
+      "quickContact": "Contact Rapide",
+      "getFreeConsultation": "Obtenir une Consultation Gratuite"
+    },
+    "stats": {
+      "title": "Notre Impact en Tunisie",
+      "happyFarmers": "Agriculteurs Satisfaits",
+      "hectaresManaged": "Hectares Gérés",
+      "waterSavings": "Économies d'Eau",
+      "customerSatisfaction": "Satisfaction Client"
+    },
+    "features": {
+      "title": "Pourquoi Choisir InvestFarm?",
+      "subtitle": "Solutions complètes d'agriculture intelligente adaptées au secteur agricole tunisien",
+      "smartFarming": {
+        "title": "Solutions d'Agriculture Intelligente",
+        "description": "Capteurs IoT, irrigation automatisée et agriculture de précision pour une gestion optimale des cultures."
+      },
+      "waterConservation": {
+        "title": "Conservation de l'Eau",
+        "description": "Systèmes d'irrigation avancés qui réduisent l'utilisation d'eau jusqu'à 50% tout en améliorant les rendements."
+      },
+      "dataAnalytics": {
+        "title": "Analyse de Données",
+        "description": "Surveillance en temps réel et analyses prédictives pour des décisions agricoles éclairées."
+      },
+      "sustainablePractices": {
+        "title": "Pratiques Durables",
+        "description": "Méthodes d'agriculture biologique et solutions respectueuses de l'environnement pour la protection de l'environnement."
+      }
+    },
+    "services": {
+      "title": "Services Populaires",
+      "subtitle": "Découvrez nos solutions d'agriculture intelligente les plus demandées",
+      "smartIrrigation": {
+        "title": "Systèmes d'Irrigation Intelligente",
+        "description": "Irrigation automatisée avec planification alimentée par l'IA",
+        "price": "À partir de 1200 TND"
+      },
+      "soilAnalysis": {
+        "title": "Analyse et Test du Sol",
+        "description": "Test complet du sol pour une sélection optimale des cultures",
+        "price": "À partir de 300 TND"
+      },
+      "droneMonitoring": {
+        "title": "Drones de Surveillance des Cultures",
+        "description": "Surveillance aérienne et analyse de la santé des cultures",
+        "price": "À partir de 2800 TND"
+      },
+      "learnMore": "En Savoir Plus"
+    },
+    "benefits": {
+      "title": "Avantages de l'Agriculture Intelligente",
+      "subtitle": "Nos solutions d'agriculture intelligente offrent des résultats mesurables pour les agriculteurs tunisiens, vous aidant à augmenter la productivité tout en réduisant les coûts et l'impact environnemental.",
+      "list": [
+        "Réduire la consommation d'eau jusqu'à 50%",
+        "Augmenter les rendements des cultures de 25-40%",
+        "Surveillance et alertes en temps réel",
+        "Support technique expert 24/7",
+        "Solutions biologiques certifiées",
+        "Installation et formation gratuites"
+      ],
+      "exploreAllServices": "Explorer Tous les Services",
+      "successMetrics": "Métriques de Succès",
+      "waterEfficiency": "Efficacité de l'Eau",
+      "cropYieldIncrease": "Augmentation du Rendement",
+      "costReduction": "Réduction des Coûts"
+    },
+    "testimonials": {
+      "title": "Ce Que Disent Nos Agriculteurs",
+      "subtitle": "Vraies histoires d'agriculteurs tunisiens qui ont réussi",
+      "testimonial1": "InvestFarm a transformé mon oliveraie avec leur système d'irrigation intelligente. Ma consommation d'eau a diminué de 40% tandis que mon rendement a augmenté de 25%.",
+      "testimonial2": "Le service d'analyse du sol m'a aidé à comprendre exactement ce dont ma terre avait besoin. Maintenant mes palmiers dattiers sont plus sains que jamais.",
+      "testimonial3": "Le service de surveillance par drone m'a sauvé d'une infestation majeure de parasites. La détection précoce a fait toute la différence.",
+      "farmer1": "Ahmed Ben Salem",
+      "farmer2": "Fatma Mansouri",
+      "farmer3": "Mohamed Karray",
+      "role1": "Agriculteur d'Olives",
+      "role2": "Agriculteur de Palmiers Dattiers",
+      "role3": "Agriculteur de Céréales",
+      "location1": "Sfax, Tunisie",
+      "location2": "Gabès, Tunisie",
+      "location3": "Béja, Tunisie"
+    },
+    "cta": {
+      "title": "Prêt à Transformer Votre Ferme?",
+      "subtitle": "Rejoignez des milliers d'agriculteurs tunisiens qui ont déjà adopté la technologie d'agriculture intelligente",
+      "getFreeConsultation": "Obtenir une Consultation Gratuite",
+      "viewProducts": "Voir les Produits"
+    }
+  },
+  "products": {
+    "title": "Produits d'Agriculture Intelligente",
+    "subtitle": "Solutions technologiques avancées pour l'agriculture moderne en Tunisie",
+    "searchPlaceholder": "Rechercher des produits...",
+    "category": "Catégorie",
+    "found": "{{count}} produits trouvés",
+    "outOfStock": "Rupture de Stock",
+    "addToCart": "Ajouter au Panier",
+    "noProducts": "Aucun Produit Disponible",
+    "noProductsSubtitle": "Nous travaillons sur l'ajout de plus de produits. Veuillez revenir plus tard.",
+    "whyChoose": {
+      "title": "Pourquoi Choisir Nos Produits?",
+      "quality": {
+        "title": "Qualité Premium",
+        "description": "Tous nos produits sont fabriqués avec les matériaux et composants de la plus haute qualité."
+      },
+      "support": {
+        "title": "Support Expert",
+        "description": "Bénéficiez du support et des conseils professionnels de nos experts agricoles."
+      },
+      "innovation": {
+        "title": "Technologie de Pointe",
+        "description": "Restez en avance avec la technologie d'agriculture intelligente et les innovations de pointe."
+      }
+    },
+    "categories": {
+      "all": "Tous",
+      "sensors": "Capteurs",
+      "irrigation": "Irrigation",
+      "monitoring": "Surveillance",
+      "fertilizers": "Engrais",
+      "greenhouse": "Serre",
+      "protection": "Protection",
+      "analysis": "Analyse"
+    },
+    "tabs": {
+      "all": "Tous les Produits",
+      "featured": "En Vedette",
+      "new": "Nouveautés",
+      "bestsellers": "Meilleures Ventes"
+    },
+    "features": {
+      "shipping": {
+        "title": "Livraison Gratuite",
+        "description": "Livraison gratuite en Tunisie pour les commandes de plus de 500 TND"
+      },
+      "quality": {
+        "title": "Garantie Qualité",
+        "description": "Tous les produits sont garantis avec assurance qualité"
+      },
+      "support": {
+        "title": "Support Expert",
+        "description": "Support technique et assistance à l'installation inclus"
+      },
+      "results": {
+        "title": "Résultats Prouvés",
+        "description": "Solutions testées et prouvées pour l'agriculture tunisienne"
+      }
+    }
+  },
+  "services": {
+    "title": "Nos Services",
+    "subtitle": "Solutions complètes d'agriculture intelligente adaptées au secteur agricole tunisien",
+    "chooseCategory": "Choisissez Votre Catégorie de Service",
+    "viewFeatures": "Voir les Fonctionnalités",
+    "bookService": "Réserver ce Service",
+    "whyChoose": "Pourquoi Choisir InvestFarm?",
+    "categories": {
+      "all": "Tous",
+      "consultation": "Consultation",
+      "infrastructure": "Infrastructure",
+      "analysis": "Analyse",
+      "protection": "Protection",
+      "technology": "Technologie",
+      "certification": "Certification",
+      "processing": "Traitement",
+      "education": "Éducation"
+    },
+    "list": {
+      "consultation": {
+        "title": "Consultation en Agriculture Intelligente",
+        "description": "Conseils d'experts pour l'implémentation de capteurs IoT, irrigation automatisée et technologies d'agriculture de précision.",
+        "price": "À partir de 200 TND/heure",
+        "duration": "1-4 heures par session",
+        "features": [
+          "Installation et surveillance de capteurs IoT",
+          "Configuration de système d'irrigation automatisé",
+          "Implémentation d'agriculture de précision",
+          "Stratégies d'optimisation des cultures",
+          "Consultation en intégration technologique"
+        ]
+      },
+      "irrigation": {
+        "title": "Conception de Système d'Irrigation",
+        "description": "Solutions d'irrigation personnalisées pour une utilisation optimale de l'eau et la santé des cultures dans le climat tunisien.",
+        "price": "À partir de 1500 TND",
+        "duration": "2-3 semaines",
+        "features": [
+          "Conception de système d'irrigation goutte à goutte",
+          "Optimisation de l'efficacité de l'eau",
+          "Solutions adaptatives au climat",
+          "Systèmes de planification automatisés",
+          "Surveillance de la qualité de l'eau"
+        ]
+      },
+      "analysis": {
+        "title": "Analyse du Sol et des Cultures",
+        "description": "Tests complets du sol et analyse des cultures pour des décisions agricoles optimales.",
+        "price": "À partir de 300 TND",
+        "duration": "3-5 jours ouvrables",
+        "features": [
+          "Analyse de la composition du sol",
+          "Test de carence en nutriments",
+          "Évaluation de l'aptitude des cultures",
+          "Test de pH et de salinité",
+          "Rapports d'analyse détaillés"
+        ]
+      },
+      "pest": {
+        "title": "Gestion des Parasites",
+        "description": "Solutions de gestion intégrée des parasites pour des cultures saines et une agriculture durable.",
+        "price": "À partir de 400 TND",
+        "duration": "Service continu",
+        "features": [
+          "Identification et surveillance des parasites",
+          "Méthodes de contrôle biologique",
+          "Solutions sans produits chimiques",
+          "Stratégies préventives",
+          "Services de surveillance réguliers"
+        ]
+      },
+      "analytics": {
+        "title": "Analyse de Données et Surveillance",
+        "description": "Surveillance de ferme en temps réel et analyse de données pour une prise de décision éclairée.",
+        "price": "À partir de 500 TND/mois",
+        "duration": "Abonnement mensuel",
+        "features": [
+          "Surveillance de capteurs en temps réel",
+          "Analyse de performance des cultures",
+          "Intégration météo",
+          "Analyse prédictive",
+          "Configuration de tableau de bord personnalisé"
+        ]
+      },
+      "certification": {
+        "title": "Certification Biologique",
+        "description": "Assistance complète pour obtenir la certification biologique pour les marchés tunisiens et l'exportation.",
+        "price": "À partir de 800 TND",
+        "duration": "3-6 mois",
+        "features": [
+          "Guidance du processus de certification",
+          "Préparation de la documentation",
+          "Support de préparation d'audit",
+          "Surveillance de conformité",
+          "Assistance d'accès au marché"
+        ]
+      },
+      "postharvest": {
+        "title": "Solutions Post-Récolte",
+        "description": "Solutions de stockage, traitement et emballage pour maximiser la valeur des cultures.",
+        "price": "À partir de 600 TND",
+        "duration": "1-2 semaines",
+        "features": [
+          "Optimisation d'installation de stockage",
+          "Configuration d'équipement de traitement",
+          "Solutions d'emballage",
+          "Techniques de préservation de qualité",
+          "Support de préparation au marché"
+        ]
+      },
+      "training": {
+        "title": "Formation et Ateliers",
+        "description": "Programmes de formation complets pour les techniques et technologies agricoles modernes.",
+        "price": "À partir de 150 TND/personne",
+        "duration": "1-3 jours",
+        "features": [
+          "Formation pratique pratique",
+          "Ateliers technologiques",
+          "Sessions de meilleures pratiques",
+          "Programmes de certification",
+          "Support continu"
+        ]
+      }
+    },
+    "features": {
+      "local": {
+        "title": "Expertise Locale",
+        "description": "Compréhension approfondie du climat, des conditions du sol et des défis agricoles de la Tunisie."
+      },
+      "results": {
+        "title": "Résultats Prouvés",
+        "description": "Solutions d'agriculture intelligente implémentées avec succès en Tunisie avec des améliorations mesurables."
+      },
+      "support": {
+        "title": "Support Continu",
+        "description": "Surveillance, maintenance et support continus pour assurer votre succès."
+      }
+    },
+    "cta": {
+      "title": "Prêt à Transformer Votre Ferme?",
+      "subtitle": "Contactez-nous aujourd'hui pour discuter de vos besoins spécifiques et obtenir une solution personnalisée.",
+      "contact": "Nous Contacter",
+      "quote": "Demander un Devis"
+    }
+  },
+  "farms": {
+    "title": "Nos Fermes",
+    "subtitle": "Visitez nos fermes de démonstration",
+    "visitFarm": "Visiter la Ferme"
+  },
+  "cart": {
+    "title": "Panier d'Achat",
+    "empty": "Votre panier est vide",
+    "total": "Total",
+    "checkout": "Commander",
+    "remove": "Supprimer"
+  },
+  "contact": {
+    "title": "Contactez-Nous",
+    "subtitle": "Entrez en contact avec notre équipe",
+    "name": "Nom",
+    "email": "Email",
+    "phone": "Téléphone",
+    "message": "Message",
+    "send": "Envoyer le Message",
+    "address": "Adresse",
+    "phoneNumber": "+216 71 234 567",
+    "whatsapp": "+216 98 765 432",
+    "emailAddress": "info@investfarm.tn",
+    "successMessage": "Merci pour votre message! Nous vous répondrons bientôt.",
+    "emailTitle": "Envoyez-nous un Email",
+    "emailDescription": "Envoyez-nous un email à tout moment",
+    "phoneTitle": "Appelez-nous",
+    "phoneDescription": "Lundi-Vendredi de 8h à 18h",
+    "whatsappTitle": "WhatsApp",
+    "whatsappDescription": "Communication rapide via WhatsApp"
+  },
+  "auth": {
+    "login": "Connexion",
+    "register": "S'inscrire",
+    "email": "Email",
+    "password": "Mot de Passe",
+    "confirmPassword": "Confirmer le Mot de Passe",
+    "forgotPassword": "Mot de passe oublié?",
+    "noAccount": "Vous n'avez pas de compte?",
+    "hasAccount": "Vous avez déjà un compte?",
+    "loginSuccess": "Connexion réussie!",
+    "registerSuccess": "Inscription réussie!",
+    "loginError": "Échec de la connexion. Veuillez vérifier vos identifiants.",
+    "registerError": "Échec de l'inscription. Veuillez réessayer."
+  },
+  "common": {
+    "loading": "Chargement...",
+    "error": "Erreur",
+    "success": "Succès",
+    "cancel": "Annuler",
+    "save": "Sauvegarder",
+    "edit": "Modifier",
+    "delete": "Supprimer",
+    "close": "Fermer",
+    "back": "Retour",
+    "next": "Suivant",
+    "previous": "Précédent",
+    "search": "Rechercher",
+    "filter": "Filtrer",
+    "sort": "Trier",
+    "viewAll": "Voir Tout",
+    "readMore": "Lire Plus",
+    "learnMore": "En Savoir Plus",
+    "getStarted": "Commencer",
+    "contactUs": "Nous Contacter",
+    "retry": "Réessayer",
+    "changeLanguage": "Changer de Langue",
+    "aboutUs": "À Propos",
+    "privacy": "Politique de Confidentialité",
+    "terms": "Conditions d'Utilisation"
+  }
+}

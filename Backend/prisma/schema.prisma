@@ -1,0 +1,92 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = "file:./dev.db"
+}
+
+model User {
+  id        Int         @id @default(autoincrement())
+  email     String      @unique
+  name      String
+  password  String
+  role      String      @default("USER") // ADMIN, USER
+  phone     String?
+  address   String?
+  status    String      @default("ACTIVE") // ACTIVE, INACTIVE
+  createdAt DateTime    @default(now())
+  updatedAt DateTime    @updatedAt
+  lands     Land[]
+  orders    Order[]
+}
+
+model Land {
+  id          Int       @id @default(autoincrement())
+  name        String
+  size        Float     // in acres
+  location    String
+  status      String    // AVAILABLE, RENTED, MAINTENANCE
+  price       Float
+  description String?
+  type        String?   // AGRICULTURAL, LIVESTOCK, MIXED
+  coordinates String?   // JSON string for lat/lng
+  imageUrl    String?   // URL to land image
+  userId      Int
+  user        User      @relation(fields: [userId], references: [id])
+  createdAt   DateTime  @default(now())
+  updatedAt   DateTime  @updatedAt
+}
+
+model Equipment {
+  id             Int         @id @default(autoincrement())
+  name           String
+  type           String      // TRACTOR, HARVESTER, etc.
+  status         String      // AVAILABLE, RENTED, MAINTENANCE
+  price          Float
+  description    String?
+  imageUrl       String?     // URL to equipment image
+  specifications String?     // JSON string for specifications
+  orderItems     OrderItem[]
+  createdAt      DateTime    @default(now())
+  updatedAt      DateTime    @updatedAt
+}
+
+model Order {
+  id            Int         @id @default(autoincrement())
+  status        String      // PENDING, CONFIRMED, COMPLETED, CANCELLED
+  totalAmount   Float
+  paymentMethod String?     // CARD, CASH, BANK_TRANSFER
+  shippingAddress String?   // Delivery address
+  notes         String?     // Order notes
+  imageUrl      String?     // URL to service image
+  userId        Int
+  user          User        @relation(fields: [userId], references: [id])
+  orderItems    OrderItem[]
+  createdAt     DateTime    @default(now())
+  updatedAt     DateTime    @updatedAt
+}
+
+model OrderItem {
+  id          Int       @id @default(autoincrement())
+  quantity    Int
+  price       Float
+  orderId     Int
+  order       Order     @relation(fields: [orderId], references: [id])
+  equipmentId Int
+  equipment   Equipment @relation(fields: [equipmentId], references: [id])
+  createdAt   DateTime  @default(now())
+  updatedAt   DateTime  @updatedAt
+}
+
+model Contact {
+  id        Int      @id @default(autoincrement())
+  name      String
+  email     String
+  subject   String
+  message   String
+  status    String   @default("NEW") // NEW, READ, REPLIED
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+} 
