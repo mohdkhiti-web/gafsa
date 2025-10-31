@@ -356,7 +356,9 @@
     "loginSuccess": "Connexion réussie!",
     "registerSuccess": "Inscription réussie!",
     "loginError": "Échec de la connexion. Veuillez vérifier vos identifiants.",
-    "registerError": "Échec de l'inscription. Veuillez réessayer."
+    "registerError": "Échec de l'inscription. Veuillez réessayer.",
+    "fillAllFields": "Veuillez remplir tous les champs requis.",
+    "passwordMismatch": "Les mots de passe ne correspondent pas."
   },
   "common": {
     "loading": "Chargement...",

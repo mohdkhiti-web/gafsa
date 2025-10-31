@@ -356,7 +356,9 @@
     "loginSuccess": "Login successful!",
     "registerSuccess": "Registration successful!",
     "loginError": "Login failed. Please check your credentials.",
-    "registerError": "Registration failed. Please try again."
+    "registerError": "Registration failed. Please try again.",
+    "fillAllFields": "Please fill in all required fields.",
+    "passwordMismatch": "Passwords do not match."
   },
   "common": {
     "loading": "Loading...",
