@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useCallback, useState } from 'react';
 import {
   Dialog,
   DialogTitle,
@@ -15,17 +15,37 @@ import {
 import { useAuth } from '../context/AuthContext';
 import { useTranslation } from 'react-i18next';
 
+const createInitialFormState = () => ({
+  email: '',
+  password: '',
+  name: '',
+  confirmPassword: '',
+});
+
 const AuthDialog = () => {
-  const { isAuthDialogOpen, closeAuthDialog, login } = useAuth();
+  const { isAuthDialogOpen, closeAuthDialog, login, register } = useAuth();
   const { t } = useTranslation();
   const [tab, setTab] = useState(0);
-  const [formData, setFormData] = useState({
-    email: '',
-    password: '',
-    name: '',
-    confirmPassword: '',
-  });
+
+  const [formData, setFormData] = useState(() => createInitialFormState());
   const [error, setError] = useState('');
+  const [isSubmitting, setIsSubmitting] = useState(false);
+
+  const getErrorMessage = (message, fallback) => {
+    if (!message) {
+      return fallback;
+    }
+
+    const genericMessages = ['Login failed.', 'Registration failed.'];
+    return genericMessages.includes(message) ? fallback : message;
+  };
+
+  const handleClose = useCallback(() => {
+    setFormData(createInitialFormState());
+    setError('');
+    setTab(0);
+    closeAuthDialog();
+  }, [closeAuthDialog]);
 
   const handleTabChange = (event, newValue) => {
     setTab(newValue);
@@ -41,36 +61,53 @@ const AuthDialog = () => {
     setError('');
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     setError('');
 
     if (tab === 0) {
       // Login
       if (!formData.email || !formData.password) {
-        setError('Please fill in all fields');
+        setError(t('auth.fillAllFields'));
         return;
       }
-      login(formData.email, formData.password);
-      closeAuthDialog();
+      try {
+        setIsSubmitting(true);
+        await login(formData.email.trim(), formData.password);
+        handleClose();
+      } catch (err) {
+        setError(getErrorMessage(err?.message, t('auth.loginError')));
+      } finally {
+        setIsSubmitting(false);
+      }
     } else {
       // Signup
       if (!formData.email || !formData.password || !formData.name || !formData.confirmPassword) {
-        setError('Please fill in all fields');
+        setError(t('auth.fillAllFields'));
         return;
       }
       if (formData.password !== formData.confirmPassword) {
-        setError('Passwords do not match');
+        setError(t('auth.passwordMismatch'));
         return;
       }
-      // Handle signup logic here
-      console.log('Signup data:', formData);
-      closeAuthDialog();
+      try {
+        setIsSubmitting(true);
+        await register({
+          name: formData.name.trim(),
+          email: formData.email.trim(),
+          password: formData.password,
+        });
+        handleClose();
+      } catch (err) {
+        setError(getErrorMessage(err?.message, t('auth.registerError')));
+      } finally {
+        setIsSubmitting(false);
+      }
     }
   };
 
   return (
-    <Dialog open={isAuthDialogOpen} onClose={closeAuthDialog} maxWidth="sm" fullWidth>
+    <Dialog open={isAuthDialogOpen} onClose={handleClose} maxWidth="sm" fullWidth>
       <DialogTitle>
         <Tabs
           value={tab}
@@ -145,8 +182,8 @@ const AuthDialog = () => {
         </Box>
       </DialogContent>
       <DialogActions>
-        <Button onClick={closeAuthDialog}>{t('common.cancel')}</Button>
-        <Button onClick={handleSubmit} variant="contained" color="primary">
+        <Button onClick={handleClose}>{t('common.cancel')}</Button>
+        <Button onClick={handleSubmit} variant="contained" color="primary" disabled={isSubmitting}>
           {tab === 0 ? t('auth.login') : t('auth.register')}
         </Button>
       </DialogActions>

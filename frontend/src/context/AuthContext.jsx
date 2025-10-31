@@ -1,4 +1,5 @@
-import React, { createContext, useContext, useState } from 'react';
+import React, { createContext, useContext, useEffect, useState } from 'react';
+import apiService from '../services/api';
 
 const AuthContext = createContext();
 
@@ -23,21 +24,74 @@ export const AuthProvider = ({ children }) => {
     setIsAuthDialogOpen(false);
   };
 
-  const login = (email, password) => {
-    // Here you would typically make an API call to your backend
-    // For now, we'll just simulate a successful login
-    console.log('Logging in with:', email, password);
-    
-    // Simulate successful login
+  useEffect(() => {
+    if (typeof window === 'undefined') {
+      return;
+    }
+
+    const storedToken = localStorage.getItem('token');
+    const storedUser = localStorage.getItem('user');
+
+    if (storedToken && storedUser) {
+      try {
+        const parsedUser = JSON.parse(storedUser);
+        setIsAuthenticated(true);
+        setUser(parsedUser);
+      } catch (error) {
+        localStorage.removeItem('user');
+      }
+    }
+  }, []);
+
+  const persistSession = (token, userData) => {
+    if (typeof window !== 'undefined') {
+      localStorage.setItem('token', token);
+      localStorage.setItem('user', JSON.stringify(userData));
+    }
     setIsAuthenticated(true);
-    setUser({
-      email,
-      name: email.split('@')[0], // Just for demo purposes
-    });
-    closeAuthDialog();
+    setUser(userData);
+  };
+
+  const extractErrorMessage = (error, fallback) => {
+    const responseMessage = error?.response?.data?.message;
+    if (Array.isArray(responseMessage)) {
+      return responseMessage[0] || fallback;
+    }
+    if (typeof responseMessage === 'string') {
+      return responseMessage;
+    }
+    return fallback;
+  };
+
+  const login = async (email, password) => {
+    try {
+      const data = await apiService.auth.login(email, password);
+      if (data?.access_token && data?.user) {
+        persistSession(data.access_token, data.user);
+      }
+      return data;
+    } catch (error) {
+      throw new Error(extractErrorMessage(error, 'Login failed.'));
+    }
+  };
+
+  const register = async (userData) => {
+    try {
+      const data = await apiService.auth.register(userData);
+      if (data?.access_token && data?.user) {
+        persistSession(data.access_token, data.user);
+      }
+      return data;
+    } catch (error) {
+      throw new Error(extractErrorMessage(error, 'Registration failed.'));
+    }
   };
 
   const logout = () => {
+    if (typeof window !== 'undefined') {
+      localStorage.removeItem('token');
+      localStorage.removeItem('user');
+    }
     setIsAuthenticated(false);
     setUser(null);
   };
@@ -49,8 +103,9 @@ export const AuthProvider = ({ children }) => {
     isAuthenticated,
     user,
     login,
+    register,
     logout,
   };
 
   return <AuthContext.Provider value={value}>{children}</AuthContext.Provider>;
-}; 
+};
